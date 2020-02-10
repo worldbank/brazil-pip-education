@@ -1,0 +1,335 @@
+%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+
+% Initiate document
+% -----------------
+\documentclass[11pt,a4paper]{article}
+
+% Document codification and language
+\usepackage[utf8]{inputenc} % Codificação do documento (conversão automática dos acentos)
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+
+% Set up geometry of the document
+\usepackage{geometry}
+\geometry{a4paper,tmargin=2.54cm,bmargin=2.54cm,lmargin=2.54cm,rmargin=2.54cm}
+
+% Load packages
+% -------------
+\usepackage[centertags]{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{graphicx}
+
+\usepackage{epstopdf} %converting to PDF
+\usepackage{polynom}
+\usepackage{verbatim}
+\usepackage{rotating}
+
+\usepackage{setspace}
+\usepackage[section]{placeins}
+\usepackage[justification=centering]{caption}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi} %for \sym{*}
+
+\usepackage{array}
+\newcolumntype{C}{>{\centering\arraybackslash}m{2cm}}
+\newcolumntype{D}{>{\centering\arraybackslash}m{1.81cm}}
+
+\usepackage{color}
+\setcounter{tocdepth}{4}
+\usepackage{adjustbox}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{afterpage}
+\usepackage{lscape}
+%\usepackage{subfigure} is an obsolete package
+\usepackage{subcaption} %is the new one
+\usepackage[bottom]{footmisc}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{pdflscape}
+\usepackage{titlesec}
+
+% HYPERLINKS
+\usepackage[hyphens]{url}
+\usepackage[backref]{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=black,
+	urlcolor=blue,
+	citecolor=gray}
+
+\renewcommand\backrefxxx[3]{%
+	\hyperlink{page.#1}{\textcolor{red}{$\uparrow$#1}}%
+}
+
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\reallywidehat[1]{%
+	\savestack{\tmpbox}{\stretchto{%
+			\scaleto{%
+				\scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+				{\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+			}{\textheight}% 
+		}{0.5ex}}%
+	\stackon[1pt]{#1}{\tmpbox}%
+}
+
+\usepackage[round]{natbib}
+\bibliographystyle{ecta}
+
+\usepackage{pdfpages}
+
+\renewcommand{\thepage}{\roman{page}}% Roman numerals for page counter
+
+\pgfplotsset{compat=1.14}
+\begin{document}
+	
+	% Title page
+	% ----------
+	
+	\font\myfont=cmr12 at 19pt
+	\title{\myfont{Online Appendix for ``Supporting Teacher Autonomy to Improve Education Outcomes: Experimental Evidence from Brazil''}}
+	
+	\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+	
+	\author{%
+		Caio Piza\thanks{Development Impact Evaluation (DIME), The World Bank, 1818 H Street NW, Washington, DC 20433, United States.}%
+		\and Astrid Zwager\samethanks[2]%
+		\and Andre Loureiro\thanks{Education Global Practice, The World Bank.}%
+		\and Rafael Dantas\samethanks[2]%
+		\and Matteo Ruzzante\samethanks[2]
+	}
+	
+	\date{}
+	
+	\maketitle
+	
+	% Contents and lists
+	\vspace{1cm}
+	\listoffigures
+	\listoftables
+	
+	
+	\newpage
+	\sloppy
+	
+	% Set up paragraph
+	\doublespacing
+	
+	\setlength\parskip{1em}
+	\setlength\parindent{0pt}
+	
+	\titlespacing{\section}{0pt}{0.5\parskip}{*-0.75}
+	\titlespacing{\subsection}{0pt}{0.5\parskip}{*-0.75}
+	\titlespacing{\subsubsection}{0pt}{0.5\parskip}{*-0.75}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	% Attach DIME Analytics 
+	\pgfplotsset{compat=1.15}
+	\includepdf[pages=-, fitpaper=true]{ReproducibilityCheck}
+	
+	\newpage
+	\renewcommand{\thetable}{C\arabic{table}}
+	\renewcommand{\thefigure}{C\arabic{figure}}
+	
+	\clearpage
+	\null
+	\vfill
+	\begin{figure}[ht!]
+		\centering
+		\caption{Quantile Treatment Effects in 6\textsuperscript{th} Grade -- By Subject}
+		\captionsetup[subfigure]{justification=centering}
+		\label{fig:qreg_bySubject_grade6}
+		
+		\begin{subfigure}{0.5\textwidth}
+			\centering
+			\caption{Math}
+			\label{fig:qreg_MT_grade6}
+			\includegraphics[width=8cm]{DataWork/Output/Figures/figC1a-qreg_MT_grade6.png}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\textwidth}
+			\centering
+			\caption{Portuguese}
+			\label{qreg_LT_grade6}
+			\includegraphics[width=8cm]{DataWork/Output/Figures/figC1b-qreg_LT_grade6}
+		\end{subfigure} 
+		
+		\vspace{1em}
+		
+		\begin{subfigure}{0.5\textwidth}
+			\centering
+			\caption{Human Sciences}
+			\label{fig:qreg_CH_grade6}
+			\includegraphics[width=8cm]{DataWork/Output/Figures/figC1c-qreg_CH_grade6.png}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\textwidth}
+			\centering
+			\caption{Natural Sciences}
+			\label{fig:qreg_CN_grade6}
+			\includegraphics[width=8cm]{DataWork/Output/Figures/figC1d-qreg_CN_grade6}
+		\end{subfigure}
+		
+		\vspace{1em}
+		
+		\justifying
+		\noindent
+		\small{\textit{Notes:} Point estimates of quantile regressions with strata (i.e., region and grade) fixed effects and standard errors clustered at the school level. Confidence intervals are 90\%. Quantile treatment effects are expressed in terms of standard deviations from the control group.}
+	\end{figure}
+	\vfill
+	
+	\null
+	\vfill
+	\begin{table}[!ht]
+		\caption{Impact on Student Learning -- Controlling for Students' Characteristics}
+		\centering
+		\label{tab:test_studentlevel_ctrl}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC1-test_studentlevel_ctrl.tex}
+				\multicolumn{6}{@{}p{0.91\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All regressions are OLS with strata fixed effects and control for students' characteristics, such as age, gender and race dummies (white, indigenous, black, or \textit{pardo}), whether they receive \textit{Bolsa Familia}, and  whether they use school transportation. Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	\vfill
+	
+	\begin{table}[!ht]
+		\caption{Impact on Student Learning -- Blocked Difference-in-Means}
+		\label{tab:test_studentlevel_DIM}
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC2-test_studentlevel_DIM.tex}
+				\multicolumn{6}{@{}p{0.9\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. Coefficients are sample-weighted average treatment effects of the within-block difference-in-means (Blocked DIM). Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Student Learning -- Interaction-Weighted Estimator (IWE)}
+		\centering
+		\label{tab:test_studentlevel_IWE}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC3-test_studentlevel_IWE.tex}
+				\multicolumn{6}{@{}p{1.15\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All estimates are IWE as in \citet{gibbons2018broken}. Standard errors clustered at the school level in parentheses. We only show results for 5\textsuperscript{th} and 6\textsuperscript{th} grade, because 10\textsuperscript{th} grade has one stratum with no variation in treatment assignment.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Student Learning -- Regression-Weighted Estimator (RWE)}
+		\centering
+		\label{tab:test_studentlevel_RWE}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC4-test_studentlevel_RWE.tex}
+				\multicolumn{6}{@{}p{1.15\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All estimates are RWE as in \citet{gibbons2018broken}. Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Student Learning -- School Level Regressions}
+		\label{tab:test_schoollevel}
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC5-test_schoollevel.tex}
+				\multicolumn{6}{@{}p{0.92\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: school. All regressions are OLS with strata (i.e., region and grade) fixed effects and analytic weights for number of students enrolled in the grade of interest. Robust standard errors in parentheses. The coefficient are expressed in terms of standard deviations from the control group, while mean and standard deviation of the dependent variable refer to the raw values in the control group.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Student Learning -- Standardized Test Scores Rescaled to SAEB}
+		\label{tab:test_rescaled_studentlevel}
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lccccc} \hline \hline \input{DataWork/Output/Tables/tabC6-test_rescaled_studentlevel.tex} \multicolumn{6}{@{}p{0.87\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All regressions are OLS with strata (i.e., region and grade) fixed effects. Standard errors clustered at the school level.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	% Spillover in other grades in the same year
+	\begin{table}[ht!]
+		\caption{Impact on Student Progression Rates in 6\textsuperscript{th} Grade Treated Schools -- Spillover to Other Grades}
+		\label{tab:promotion_other_grades}
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC7-promotion_other_grades.tex}
+				\multicolumn{9}{@{}p{1.05\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. School-level data are from \textit{Sistema Integrado de Gestão da Educação} (SIGEduc) and student-level data are from Rio Grande do Norte census. Unit of observation: school and student. Sample: schools treated at 6\textsuperscript{th} grade. All regressions are OLS with strata (i.e., region) fixed effects. Robust standard errors for school-level regressions and standard errors clustered at the school level for student-level regressions in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Socio-Emotional Skills -- Controlling for Students' Characteristics}
+		\centering
+		\label{tab:socio_studentlevel_ctrl}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC8-socio_studentlevel_ctrl.tex}
+				\multicolumn{6}{@{}p{1.175\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All regressions are OLS with strata (i.e., region and grade) fixed effects and control for students' characteristics, such as age, gender and race dummies (white, indigenous, black, or \textit{pardo}), whether they receive \textit{Bolsa Familia}, and whether they use school transportation. Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Socio-Emotional Skills -- Blocked Difference-in-Means}
+		\label{tab:socio_studentlevel_DIM}
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC9-socio_studentlevel_DIM.tex}
+				\multicolumn{6}{@{}p{1.17\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. Coefficients are sample-weighted average treatment effects of the within-block difference-in-means (Blocked DIM). Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Socio-Emotional Skills -- Interaction-Weighted Estimator (IWE)}
+		\centering
+		\label{tab:socio_studentlevel_IWE}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC10-socio_studentlevel_IWE.tex}
+				\multicolumn{6}{@{}p{1.42\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All estimates are IWE as in \citet{gibbons2018broken}. Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Socio-Emotional Skills -- Regression-Weighted Estimator (RWE)}
+		\centering
+		\label{tab:socio_studentlevel_RWE}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC11-socio_studentlevel_RWE.tex}
+				\multicolumn{6}{@{}p{1.42\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All estimates are RWE as in \citet{gibbons2018broken}. Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[ht!]
+		\caption{Impact on Socio-Emotional Skills -- School Level Regressions}
+		\label{tab:socio_schoollevel}
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{lcccccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC12-socio_schoollevel.tex}
+				\multicolumn{6}{@{}p{1.175\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: school. All regressions are OLS with strata (i.e., region and grade) fixed effects and analytic weights for number of students enrolled in the grade of interest. Robust standard errors in parentheses. The coefficient are expressed in terms of standard deviations from the control group, while mean and standard deviation of the dependent variable refer to the raw values in the control group.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+\end{document}
