@@ -4,7 +4,7 @@
 *																 			   *
 *  PURPOSE:  			Randomization and sample allocation					   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019											   *
+*  Last time modified:  July 2020											   *
 *																			   *
 ********************************************************************************
 
@@ -18,17 +18,13 @@
 						
 	** CREATES:	   		Table 1: Sample
 						"${master_tab}/sample.tex"
-			
-	** NOTES:
-	
-* ---------------------------------------------------------------------------- */
-
-	* Load final database with all schools
-	use "${master_dt_fin}/original_sample.dta", clear
-
+				
 * ---------------------------------------------------------------------------- *
 *						Number of eligible schools				   			   *
-* ---------------------------------------------------------------------------- *
+* ---------------------------------------------------------------------------- */
+		
+	* Load final database with all schools
+	use "${master_dt_fin}/original_sample.dta", clear
 	
 	distinct inep
 	//299 schools

@@ -17,9 +17,7 @@
 						
 	** CREATES:	   		Table B1: Impact on IDEB
 						"${master_tab}/IDEB_schoollevel.tex"
-			
-	** NOTES:
-	
+				
 * ---------------------------------------------------------------------------- */
 	
 	use "${master_dt_fin}/master_schoollevel.dta", clear
@@ -74,6 +72,7 @@
 	filefilter "${master_tab}/IDEB_schoollevel.tex"  		///
 			   "${master_tab}/tabB1-IDEB_schoollevel.tex" 	///
 			   , from("[1em]") to("") replace		
+	sleep		${sleep}
 	erase 	   "${master_tab}/IDEB_schoollevel.tex"
 
 	

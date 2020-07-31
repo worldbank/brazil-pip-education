@@ -4,29 +4,19 @@
 *																 			   *
 *  PURPOSE:  			Compare implementation degree by grade				   *		  
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  September 2019										   *
+*  Last time modified:  July 2020											   *
 *																			   *
 ********************************************************************************
 
-	** OUTLINE:			
-	
 	** REQUIRES:   		"${master_dt_fin}/master_schoollevel.dta"
 						
 	** CREATES:	   		Figure 6: Implementation by Grade
 						"${master_fig}/fig6-implementation_byGrade.png"
-			
-	** NOTES:
 
-* ---------------------------------------------------------------------------- *
-*								Prepare data								   *
 * ---------------------------------------------------------------------------- */
 
 	* Load master data at the school level
 	use 					 "${master_dt_fin}/master_schoollevel.dta", clear 
-		
-* ---------------------------------------------------------------------------- *
-* 							Descriptive statistics						   	   *
-* ---------------------------------------------------------------------------- *
 
 	* Summarize var by grade
 	sum 	 school_implementation 		     , d

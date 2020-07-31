@@ -118,6 +118,7 @@
 		}
 			file close test_`sample'
 		
+		sleep  ${sleep}
 		erase "${master_tab}/test_`sample'.tex"
 	}
 		

@@ -4,22 +4,26 @@
 *																 			   *
 *  PURPOSE:  			Heterogeneity analysis by teacher turnover 			   *		  
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  December 2019									   	   *
+*  Last time modified:  July 2020										   	   *
 *																			   *
 ********************************************************************************
 
-	** OUTLINE:			
+	** OUTLINE:			Generate dummy for high turnover at baseline
+						Run regressions on learning
+						Run regressions on progression
+						Export table
 	
-	** REQUIRES:		"${master_dt_fin}/master_studentlevel.dta"
-						"${master_dt_fin}/master_teacherlevel.dta"
+	** REQUIRES:		"${master_dt_fin}/master_teacherlevel.dta"
+	
+						"${master_dt_fin}/master_studentlevel.dta"
+						"${master_dt_fin}/RN_students_panel.dta"
+						"${master_dt_fin}/master_schoollevel.dta"
 						
 	** CREATES:			Table 6: Impact on Student Learning and Progression by Teacher Turnover at Baseline
 						"${master_tab}/tab6-het_turnover.tex"
 									
-	** NOTES:
-	
 * ---------------------------------------------------------------------------- *
-*						 Generate Dummy Turnover at Baseline			       *
+*						 Generate dummy for high turnover at baseline		   *
 * ---------------------------------------------------------------------------- */
 	
 	use					"${master_dt_fin}/master_studentlevel.dta", clear
@@ -144,7 +148,7 @@
 	}
 		
 * ---------------------------------------------------------------------------- *
-*									Export tables	  		 	   			   *
+*									Export table	  		 	   			   *
 * ---------------------------------------------------------------------------- *
 
 	* List names of estimates stored
@@ -211,6 +215,7 @@
 		}
 			file close test_`sample'
 		
+		sleep  ${sleep}
 		erase "${master_tab}/het_turnover_`sample'.tex"
 	}
 		
@@ -235,6 +240,7 @@
 	filefilter "${master_tab}/het_turnover.tex"			/// 
 			   "${master_tab}/tab6-het_turnover.tex"	///
 			   , from("[1em]") to("") replace
+	sleep  	    ${sleep}
 	erase 	   "${master_tab}/het_turnover.tex"
 	
 	* Add link to the file (filefilter does not provide it automatically"

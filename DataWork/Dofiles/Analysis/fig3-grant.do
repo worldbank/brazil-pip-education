@@ -4,7 +4,7 @@
 *																 			   *
 *  PURPOSE:  			Plot grant allocation								   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019											   *
+*  Last time modified:  July 2020											   *
 *																			   *
 ********************************************************************************
 
@@ -15,8 +15,6 @@
 						
 	** CREATES:	   		Figure 3: Allocation of Resources by Type of Grant
 						"${master_fig}/fig3-grant.png"
-			
-	** NOTES:
 	
 * ---------------------------------------------------------------------------- */
 	

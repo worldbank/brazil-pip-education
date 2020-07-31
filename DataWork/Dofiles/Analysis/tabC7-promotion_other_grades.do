@@ -154,6 +154,7 @@
 		}																								
 			file close `var'																			
 		
+		sleep  ${sleep}
 		erase "${master_tab}/`var'.tex" 																
 	}
 			

@@ -99,6 +99,7 @@
 		}
 			file close `subject'
 		
+		sleep  ${sleep}
 		erase "${master_tab}/`subject'_rescaled.tex"
 	}
 			

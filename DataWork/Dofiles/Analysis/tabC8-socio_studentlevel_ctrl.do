@@ -4,18 +4,14 @@
 *																 			   *
 *  PURPOSE:  			Estimate effect on socio-emotional skills			   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019										  	   *
+*  Last time modified:  July 2020										  	   *
 *																			   *
 ********************************************************************************
 
-	** OUTLINE:			
-	
 	** REQUIRES:   		"${master_dt_fin}/master_studentlevel.dta"
 						
 	** CREATES:	   		Table C8: Impact on Socio-Emotional Skills - Controlling for Students' Characteristics
 						"${master_tab}/tabC8-socio_studentlevel_ctrl.tex"
-			
-	** NOTES:
 
 * --------------------------------------------------------------------------- */
 
@@ -124,6 +120,7 @@
 		}
 		file close socio_`sample'
 		
+		sleep  ${sleep}
 		erase "${master_tab}/socio_`sample'.tex"
 	}
 				
@@ -132,7 +129,7 @@
 		file write socio
 			 
 			 "&(1)  		 &(2)     		    &(3)      	  &(4)  	   &(5) 	 \\		  "	_n
-			 "&Agreeableness &Conscientiousness &Extraversion &Neuroticism &Openness \\ \hline"	_n
+			 "&Agreeableness &Conscientiousness &Extroversion &Neuroticism &Openness \\ \hline"	_n
 			 "\multicolumn{6}{c}{\textbf{All schools}}				  				 \\ \hline"	_n
 			 "`all' \hline"																		_n
 			 "\multicolumn{6}{c}{\textbf{5th  grade -- Primary schools}} 			 \\ \hline"	_n

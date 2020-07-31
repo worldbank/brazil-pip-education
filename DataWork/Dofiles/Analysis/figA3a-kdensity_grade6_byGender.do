@@ -15,9 +15,7 @@
 	** CREATES:			Figure A3: Impact on Average Test Score by Gender in 6th Grade
 						(a) Distribution 
 						"${master_fig}/figA3a-kdensity_grade6_byGender.png"
-			
-	** NOTES:
-	
+				
 * ---------------------------------------------------------------------------- */
 
 	* Load student level data
@@ -60,7 +58,6 @@
 		if `pvalue_F' < `ttest_p_level' ///
 			local TE_F "`TE_F'*"
 	}
-	di "`TE_F'"
 	
 	reghdfe proficiencia_media school_treated if student_gender == 1, cl(inep) abs(strata)
 	
@@ -75,7 +72,6 @@
 		if `pvalue_M' < `ttest_p_level' ///
 			local TE_M "`TE_M'*"
 	}
-	di "`TE_M'"
 	
 	* Set locals for line colors and width
 	* ------------------------------------

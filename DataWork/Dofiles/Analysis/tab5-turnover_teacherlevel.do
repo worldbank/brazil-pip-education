@@ -4,21 +4,22 @@
 *																 			   *
 *  PURPOSE:  			Estimate effect on teacher turnover					   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019										  	   *
+*  Last time modified:  July 2020										  	   *
 *																			   *
 ********************************************************************************
 
-	** OUTLINE:			
+	** OUTLINE:			Estimate effect on teacher turnover
+						Generate dummy for high turnover at baseline
+						Interact treatment with turnover at baseline
+						Join panels and export final table
 	
 	** REQUIRES:   		"${master_dt_fin}/turnover_teacherlevel_wide.dta"
 						
 	** CREATES:	   		Table 5: Impact on Probability of Teacher Staying in the Same School
 						"${master_tab}/tab5-turnover_teacherlevel.tex"
-			
-	** NOTES:
 
 * ---------------------------------------------------------------------------- *
-*					 Estimate Effect on Teacher Turnover	 				   *
+*					 Estimate effect on teacher turnover	 				   *
 * ---------------------------------------------------------------------------- */
 
 	* Load data at the teacher level
@@ -63,7 +64,7 @@
 	#d	cr
 
 * ---------------------------------------------------------------------------- *
-*						 Generate Dummy Turnover at Baseline			       *
+*					Generate dummy for high turnover at baseline			   *
 * ---------------------------------------------------------------------------- *
 	
 	preserve
@@ -95,8 +96,10 @@
 	merge m:1 inep using `turnoverDummies', nogen assert(match)
 	
 * ---------------------------------------------------------------------------- *
-*					Interact Treatment with Turnover at Baseline		   	   *
+*					Interact treatment with turnover at baseline		   	   *
 * ---------------------------------------------------------------------------- *
+	
+	est    clear
 	
 	eststo all  		: reghdfe repeat_2017 school_treated##1.high_turnover  		///
 						, abs(strata) cl(inep)
@@ -114,19 +117,29 @@
 	
 	foreach grade in 5 6 1 {
 		
-		eststo grade`grade' : reghdfe repeat_2017 1.school_treated##1.high_turnover 	///
-						   if grade == `grade'											///
-							, abs(strata) cl(inep) 
+		* For 5th grade, we want to have an empty column in the table
+		if `grade' == 5 {
+				
+			* So we run a fake regression
+			eststo grade`grade' : reg inep inep_teacher, nocons
+		}
 		
-		estadd scalar   diff = _b[1bn.school_treated] + _b[1bn.school_treated#1bn.high_turnover]
+		else {
 		
-		test   1bn.school_treated + 1bn.school_treated#1bn.high_turnover = 0
-		estadd scalar p_diff = r(p)
-		
-		sum	   repeat_2017  if e(sample) == 1 & school_treated == 0 & high_turnover == 0
-		estadd scalar mean_0 = r(mean)
-		sum	   repeat_2017  if e(sample) == 1 & school_treated == 0 & high_turnover == 1
-		estadd scalar mean_1 = r(mean)
+			eststo grade`grade' : reghdfe repeat_2017 1.school_treated##1.high_turnover 	///
+							   if grade == `grade'											///
+								, abs(strata) cl(inep) 
+			
+			estadd scalar   diff = _b[1bn.school_treated] + _b[1bn.school_treated#1bn.high_turnover]
+			
+			test   1bn.school_treated + 1bn.school_treated#1bn.high_turnover = 0
+			estadd scalar p_diff = r(p)
+			
+			sum	   repeat_2017  if e(sample) == 1 & school_treated == 0 & high_turnover == 0
+			estadd scalar mean_0 = r(mean)
+			sum	   repeat_2017  if e(sample) == 1 & school_treated == 0 & high_turnover == 1
+			estadd scalar mean_1 = r(mean)
+		}
 	}
 		
 	#d	;
@@ -162,7 +175,10 @@
 		;
 	#d	cr
 	
-	
+* ---------------------------------------------------------------------------- *
+*						Join panels and export final table				   	   *
+* ---------------------------------------------------------------------------- *
+		
 	* Close all open files
 	file close _all
 	
@@ -186,6 +202,7 @@
 		}																			
 			file close turnover`model'														
 		
+		sleep  ${sleep}
 		erase "${master_tab}/turnover`model'.tex" 										
 	}																				
 				
@@ -209,6 +226,7 @@
 	filefilter "${master_tab}/turnover_teacherlevel.tex"		/// 
 			   "${master_tab}/tab5-turnover_teacherlevel.tex"	///
 			   , from("[1em]") to("") replace
+	sleep  		${sleep}
 	erase 	   "${master_tab}/turnover_teacherlevel.tex"
 	
 	* Add link to the file (filefilter does not provide it automatically"

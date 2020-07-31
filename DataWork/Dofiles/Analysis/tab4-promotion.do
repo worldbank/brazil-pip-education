@@ -4,7 +4,7 @@
 *																 			   *
 *  PURPOSE:  			Estimate effect on progression rates				   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019										  	   *
+*  Last time modified:  July 2020										  	   *
 *																			   *
 ********************************************************************************
 
@@ -17,8 +17,6 @@
 	** CREATES:	   		Table 4: Impact on Student Progression Rate
 						"${master_tab}/tab4-promotion.tex"
 			
-	** NOTES:
-
 * ---------------------------------------------------------------------------- *
 *							School level regression				   			   *
 * ---------------------------------------------------------------------------- */
@@ -162,6 +160,7 @@
 		}																								
 			file close `var'																			
 		
+		sleep ${sleep}
 		erase "${master_tab}/`var'.tex" 																
 	}
 			

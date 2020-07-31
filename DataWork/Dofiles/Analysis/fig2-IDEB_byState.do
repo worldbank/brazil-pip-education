@@ -4,7 +4,7 @@
 *																 			   *
 *  PURPOSE:  			Compare IDEB in Brazilian states					   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019											   *
+*  Last time modified:  July 2020											   *
 *																			   *
 ********************************************************************************
 
@@ -15,8 +15,6 @@
 						
 	** CREATES:	   		Figure 2: IDEB in Rio Grande do Norte vs. Other Brazilian states
 						"${master_fig}/fig2-IDEB_byState.png"
-			
-	** NOTES:
 	
 * ---------------------------------------------------------------------------- */
 	

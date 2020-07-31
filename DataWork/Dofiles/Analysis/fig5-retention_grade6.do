@@ -4,12 +4,10 @@
 *																 			   *
 *  PURPOSE:  			Estimate effect of retention in 6th grade	   	   	   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019										   	   *
+*  Last time modified:  July 2020										   	   *
 *																			   *
 ********************************************************************************
 
-	** OUTLINE:			
-	
 	** REQUIRES:   		"${master_dt_fin}/RN_students_panel.dta"
 	
 	** CREATES:	   		Figure 5: 6th Grade Retention and Student Attainment
@@ -19,8 +17,6 @@
 						
 						(b) Years of Completed Schooling of 2011 6th Graders
 						"${master_fig}/fig5b-retention_grade6_education.png"
-						
-	** NOTES:
 
 * ---------------------------------------------------------------------------- */
 	

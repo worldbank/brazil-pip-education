@@ -7,15 +7,11 @@
 *  Last time modified:  August 2019										  	   *
 *																			   *
 ********************************************************************************
-
-	** OUTLINE:			
 	
 	** REQUIRES:   		"${master_dt_fin}/master_studentlevel.dta"
 						
 	** CREATES:	   		Table C10: Impact on Socio-Emotional Skills - Interaction-Weighted Estimator
 						"${master_tab}/tabC10-socio_studentlevel_IWE.tex"
-			
-	** NOTES:
 
 * ---------------------------------------------------------------------------- */
 	
@@ -116,6 +112,7 @@
 		}
 			file close test_`sample'
 		
+		sleep  ${sleep}
 		erase "${master_tab}/socio_`sample'.tex"
 	}
 		
@@ -124,7 +121,7 @@
 		file write test
 			 
 			 "&(1)  		 &(2)     		    &(3)      	  &(4)  	   &(5) 	 \\		  "	_n
-			 "&Agreeableness &Conscientiousness &Extraversion &Neuroticism &Openness \\ \hline"	_n
+			 "&Agreeableness &Conscientiousness &Extroversion &Neuroticism &Openness \\ \hline"	_n
 			 "\multicolumn{6}{c}{\textbf{All schools}} 								 \\ \hline"	_n
 			 "`all' \hline"																		_n
 			 "\multicolumn{6}{c}{\textbf{5th  grade  -- Primary schools}}			 \\ \hline"	_n

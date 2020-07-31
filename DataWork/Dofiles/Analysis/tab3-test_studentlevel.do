@@ -4,18 +4,14 @@
 *																 			   *
 *  PURPOSE:  			Estimate effect on standardized test scores			   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019										  	   *
+*  Last time modified:  July 2020										  	   *
 *																			   *
 ********************************************************************************
-
-	** OUTLINE:			
 	
 	** REQUIRES:   		"${master_dt_fin}/master_studentlevel.dta"
 						
 	** CREATES:	   		Table 3: Impact on Student Learning
 						"${master_tab}/tab3-test_studentlevel.tex"
-			
-	** NOTES:
 
 * --------------------------------------------------------------------------- */
 
@@ -116,6 +112,7 @@
 		}																		
 			file close test_`sample'											
 		
+		sleep ${sleep}
 		erase "${master_tab}/test_`sample'.tex" 								
 	}																			
 	

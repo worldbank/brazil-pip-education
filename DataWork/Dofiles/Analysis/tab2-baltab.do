@@ -4,7 +4,7 @@
 *																 			   *
 *  PURPOSE:  			Balance table 	  	   						   		   *
 *  WRITTEN BY:  		Matteo Ruzzante [mruzzante@worldbank.org]		   	   *
-*  Last time modified:  May 2019											   *
+*  Last time modified:  July 2020											   *
 *																			   *
 ********************************************************************************
 
@@ -18,8 +18,6 @@
 	** CREATES:			Table 2: Balance Table
 						"${master_tab}/tab2-baltab.tex"
 			
-	** NOTES:
-
 * ---------------------------------------------------------------------------- *
 *							School characteristics							   *
 * ---------------------------------------------------------------------------- */

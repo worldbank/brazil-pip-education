@@ -4,12 +4,10 @@
 *																 			   *
 *  PURPOSE:  			Estimate spillover effects to other grades			   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019										  	   *
+*  Last time modified:  July 2020										  	   *
 *																			   *
 ********************************************************************************
 
-	** OUTLINE:			
-	
 	** REQUIRES:   		"${master_dt_fin}/master_teacherlevel.dta"
 						"${master_dt_fin}/RN_students_panel.dta"
 						"${master_dt_fin}/master_schoollevel.dta"
@@ -17,8 +15,6 @@
 	** CREATES:	   		Table 7: Spillover to Other Grades in 6th Grade Treated Schools
 						"${master_tab}/tab7-spillover_other_grades.tex"
 			
-	** NOTES:
-
 * ---------------------------------------------------------------------------- */
 
 	* Load data at the teacher level
@@ -135,6 +131,7 @@
 		}																								
 			file close `var'																			
 		
+		sleep ${sleep}
 		erase "${master_tab}/`var'.tex" 																
 	}
 			

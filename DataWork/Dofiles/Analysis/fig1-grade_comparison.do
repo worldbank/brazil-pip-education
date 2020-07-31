@@ -4,7 +4,7 @@
 *																 			   *
 *  PURPOSE:  			Compare retention and dropout across grades			   *
 *  WRITTEN BY:  	  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
-*  Last time modified:  August 2019											   *
+*  Last time modified:  July 2020											   *
 *																			   *
 ********************************************************************************
 
@@ -20,8 +20,6 @@
 						
 						(b) School Dropout Rate
 						"${master_fig}/fig1b-grade_comparison_dropout.png"
-					
-	** NOTES:
 	
 * ---------------------------------------------------------------------------- */
 	

@@ -11,13 +11,13 @@
 *																 			   *
 *  WRITTEN BY: 		  	Matteo Ruzzante [mruzzante@worldbank.org]			   *
 *  REVIEWED BY:			Abdoul Aziz Adama and Luiza Andrade					   *
-*  Last time modified: 	February 2020								   		   *
+*  Last time modified: 	July 2020								   		  	   *
 *																			   *
-********************************************************************************/
+********************************************************************************
 	
 ********************************************************************************
 * 							 Select sections to run							   *
-********************************************************************************
+********************************************************************************/
 	
 	local packages		1		//install or update packages
 	local folders		1		//set globals with folder paths
@@ -85,7 +85,7 @@
 	* Set globals
 	global repsNum   	10000		//number of replications for randomization inference
 	global seedsNum		192289 		//obtained on https://www.random.org/ at 4.55pm on 2/5/2019
-  	global sleep	  	1200		//delay code for running so it doesn't crash
+  	global sleep	  	1000		//delay code for running so it doesn't crash
 	global stataVersion 13.1		//Stata version: change to older version if you don't have the one specified
 									//however, beware that this may cause some packages to not work properly
 									//and some results to vary.
@@ -95,11 +95,11 @@
 	//feature that adjustes the transparency of elements in graphs
 	
 	* Standardize settings across users
-	ieboilstart, version(${stataVersion})
-			  `r(version)'                    
+	ieboilstart , version(${stataVersion})
+			   `r(version)'                    
 	
 	* Start timer
-	etime, start
+	etime		, start
 	   
 ********************************************************************************
 *						PART 1:  SET FOLDER PATH GLOBALS					   *
@@ -137,7 +137,7 @@
 		global master_dt_int	"${master_dt}/Intermediate"
 		global master_dt_fin	"${master_dt}/Final"
 		
-		global master_out		"${master}/Output"
+		global master_out		"${github}/DataWork/Output"
 		global master_tab		"${master_out}/Tables"
 		global master_fig		"${master_out}/Figures"
 		
@@ -164,11 +164,16 @@
 	
 	global 	  graphOptions  "title("") ylab(, angle(horizontal)) graphregion(color(white)) plotregion(color(white))"
 	
+	* Create folders to store results (if they do not exist yet)
+	cap    mkdir 			"${master_out}"
+	cap    mkdir 			"${master_tab}"
+	cap    mkdir 			"${master_fig}"
+	
 	* Install own ado-file to compure difference in means by block 
 	do 					   	"${master_do}/blockdim.ado"
 		
 	* Run paper codes so to replicate all tables and figures in both main text and appendices.
-	* Cleaning and construct are left out as they containt Personally Identifiable Information information
+	* Cleaning and construct are left out as they contain Personally Identifiable Information
 	* on students, teachers, and schools in our experimental sample.
 	* The same applies to the map in Figure 4, which was produced in R using school GPS points
 	if `analysis'   {
@@ -230,31 +235,33 @@
 			do "${master_do_anl}/figA3b-qreg_media_grade6_byGender.do"
 			
 			* Effect in terms of Prova Brasil
-			do "${master_do_anl}/figA4-itt_ProvaBrasil.do"
-			do "${master_do_anl}/figA5-itt_IDEB.do"
+			do "${master_do_anl}/figA5-itt_ProvaBrasil.do"
+			do "${master_do_anl}/figA6-itt_IDEB.do"
 		
 		* Tables
 		* ------
 		
+			* Motivation
+			do "${master_do_anl}/tabA1-correlates_turnover.do"
+			
 			* Attrition
-			do "${master_do_anl}/tabA1-baltab_participation.do"
-			do "${master_do_anl}/tabA2,3-baltab_test_takers_schoollevel.do"
-			//Note that these do-files will take quite a long time to run
+			do "${master_do_anl}/tabA2-baltab_participation.do"
+			do "${master_do_anl}/tabA3,4-baltab_test_takers_schoollevel.do"
+			//note that these do-files will take quite a long time to run
 			//as they use randomization inference with 10,000 repetitions
-			//You can comment it out by adding '//' before 'do' in line 240 and 241
 			
 			* Heterogeneity by gender and promotion rate
-			do "${master_do_anl}/tabA4-promotion_het_gender.do"
-			do "${master_do_anl}/tabA5-promotion_het.do"
+			do "${master_do_anl}/tabA5-promotion_het_gender.do"
+			do "${master_do_anl}/tabA6-promotion_het.do"
 			
 			* Impact of retention in 6th grade on dropout and years of completed schooling
-			do "${master_do_anl}/tabA6-retention_grade6_regs.do"
+			do "${master_do_anl}/tabA7-retention_grade6_regs.do"
 			
 			* Drivers of implementation
-			do "${master_do_anl}/tabA7-predict_implementation.do"
+			do "${master_do_anl}/tabA8-predict_implementation.do"
 			
 			* Impact on clearance certificate
-			do "${master_do_anl}/tabA8-clearance_certificate.do"
+			do "${master_do_anl}/tabA9-clearance_certificate.do"
 	}
 	
 	if `envelope'   {
