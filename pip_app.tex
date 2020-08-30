@@ -84,7 +84,7 @@
 
 \usepackage{pdfpages}
 
-\renewcommand{\thepage}{\roman{page}}% Roman numerals for page counter
+\renewcommand{\thepage}{\roman{page}} % Roman numerals for page counter
 
 \pgfplotsset{compat=1.14}
 \begin{document}
@@ -100,9 +100,9 @@
 	\author{%
 		Caio Piza\thanks{Development Impact Evaluation (DIME), The World Bank, 1818 H Street NW, Washington, DC 20433, United States.}%
 		\and Astrid Zwager\samethanks[2]%
-		\and Andre Loureiro\thanks{Education Global Practice, The World Bank.}%
+		\and Matteo Ruzzante\samethanks[2]%
 		\and Rafael Dantas\samethanks[2]%
-		\and Matteo Ruzzante\samethanks[2]
+		\and Andre Loureiro\thanks{Education Global Practice, The World Bank.}
 	}
 	
 	\date{}
@@ -270,12 +270,24 @@
 	\end{table}
 	
 	\begin{table}[ht!]
+		\caption{Impact on Student Progression Rates in 6\textsuperscript{th} Grade Treated Schools by Teacher Turnover at Baseline -- Spillover to Other Grades}
+		\label{tab:het_spillover_other_grades}
+		\centering
+		\begin{adjustbox}{totalheight=\textheight-2\baselineskip}
+			\begin{tabular}{lccc} \hline \hline
+				\input{DataWork/Output/Tables/tabC8-het_spillover_other_grades.tex}
+				\multicolumn{4}{@{}p{0.85\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Student and teacher data are from Rio Grande do Norte censuses. Unit of observation: student. Sample: schools treated at 6\textsuperscript{th} grade. $\sum \hat{\beta}$ is the sum of the treatment effect with the interaction variable coefficient. The p-value refers to the null hypothesis $\sum \hat{\beta} = 0$. All regressions are OLS with strata (i.e., region) fixed effects. the coefficients on progression are expressed in terms of percentage points. Standard errors clustered at the school level in parentheses.}
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+
+	\begin{table}[ht!]
 		\caption{Impact on Socio-Emotional Skills -- Controlling for Students' Characteristics}
 		\centering
 		\label{tab:socio_studentlevel_ctrl}
 		\begin{adjustbox}{max width=\textwidth}
 			\begin{tabular}{lccccc} \hline \hline
-				\input{DataWork/Output/Tables/tabC8-socio_studentlevel_ctrl.tex}
+				\input{DataWork/Output/Tables/tabC9-socio_studentlevel_ctrl.tex}
 				\multicolumn{6}{@{}p{1.175\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All regressions are OLS with strata (i.e., region and grade) fixed effects and control for students' characteristics, such as age, gender and race dummies (white, indigenous, black, or \textit{pardo}), whether they receive \textit{Bolsa Familia}, and whether they use school transportation. Standard errors clustered at the school level in parentheses.}
 			\end{tabular}
 		\end{adjustbox}
@@ -287,7 +299,7 @@
 		\centering
 		\begin{adjustbox}{max width=\textwidth}
 			\begin{tabular}{lcccccc} \hline \hline
-				\input{DataWork/Output/Tables/tabC9-socio_studentlevel_DIM.tex}
+				\input{DataWork/Output/Tables/tabC10-socio_studentlevel_DIM.tex}
 				\multicolumn{6}{@{}p{1.17\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. Coefficients are sample-weighted average treatment effects of the within-block difference-in-means (Blocked DIM). Standard errors clustered at the school level in parentheses.}
 			\end{tabular}
 		\end{adjustbox}
@@ -299,7 +311,7 @@
 		\label{tab:socio_studentlevel_IWE}
 		\begin{adjustbox}{max width=\textwidth}
 			\begin{tabular}{lcccccc} \hline \hline
-				\input{DataWork/Output/Tables/tabC10-socio_studentlevel_IWE.tex}
+				\input{DataWork/Output/Tables/tabC11-socio_studentlevel_IWE.tex}
 				\multicolumn{6}{@{}p{1.42\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All estimates are IWE as in \citet{gibbons2018broken}. Standard errors clustered at the school level in parentheses.}
 			\end{tabular}
 		\end{adjustbox}
@@ -311,7 +323,7 @@
 		\label{tab:socio_studentlevel_RWE}
 		\begin{adjustbox}{max width=\textwidth}
 			\begin{tabular}{lcccccc} \hline \hline
-				\input{DataWork/Output/Tables/tabC11-socio_studentlevel_RWE.tex}
+				\input{DataWork/Output/Tables/tabC12-socio_studentlevel_RWE.tex}
 				\multicolumn{6}{@{}p{1.42\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: student. All estimates are RWE as in \citet{gibbons2018broken}. Standard errors clustered at the school level in parentheses.}
 			\end{tabular}
 		\end{adjustbox}
@@ -323,13 +335,12 @@
 		\centering
 		\begin{adjustbox}{max width=\textwidth}
 			\begin{tabular}{lcccccc} \hline \hline
-				\input{DataWork/Output/Tables/tabC12-socio_schoollevel.tex}
+				\input{DataWork/Output/Tables/tabC13-socio_schoollevel.tex}
 				\multicolumn{6}{@{}p{1.175\textwidth}}{\footnotesize \textit{Notes}: \sym{*}Significant at 10\%. \sym{**}Significant at 5\%. \sym{***}Significant at 1\%. Unit of observation: school. All regressions are OLS with strata (i.e., region and grade) fixed effects and analytic weights for number of students enrolled in the grade of interest. Robust standard errors in parentheses. The coefficient are expressed in terms of standard deviations from the control group, while mean and standard deviation of the dependent variable refer to the raw values in the control group.}
 			\end{tabular}
 		\end{adjustbox}
 	\end{table}
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	
+	\bibliography{references}
+		
 \end{document}

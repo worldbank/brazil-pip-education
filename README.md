@@ -27,13 +27,12 @@ Computational reproducibility was verified by [DIME Analytics](https://worldbank
 
 
 ## Abstract
-Improving school quality is a public policy priority in most developing countries. We explore whether motivating teachers through increased autonomy can improve student outcomes, in a context of limited state capacity. We present experimental evidence of a program in Brazil that supports teachers to autonomously develop and implement a project aimed at engaging their students. We find substantial impacts of the program on learning and progression rates in 6th grade, a critical year of transition from primary to lower-secondary education. We show that the program reduced teacher turnover and positively impacted students' socio-emotional skills, which indicates that teacher motivation and student-teacher interactions are important drivers. The results suggest that increasing autonomy of local civil service providers coupled with technical assistance can deliver meaningful improvements in the quality of public service provision, at relatively low cost, even in a low capacity context.
+What is the impact of greater teacher autonomy on student learning? This paper provides experimental evidence from a program in Brazil. The program supported teachers, through a combination of technical assistance and a small grant, to autonomously develop and implement an innovative project aimed at engaging their students. The findings show that the program improved student learning by 0.15 standard deviation and grade passing by 13 percent in sixth grade, a critical year of transition from primary to lower-secondary education. The paper explores two mechanisms: teacher turnover and student socio-emotional skills. Teacher turnover is reduced by 20.7 percent, and the impacts on student outcomes are concentrated in the schools with the largest reductions. The findings also indicate positive impacts on conscientiousness and extroversion among the students. The results suggest that increasing the autonomy of public servants can improve service delivery, even in a low-capacity context.
 
 
-## [Latest Version of the Paper](https://github.com/worldbank/brazil-pip-education/blob/master/pip.pdf)
+## [Latest Version of the Paper](https://github.com/worldbank/brazil-pip-education/blob/working-paper/pip.pdf)
 
-## [Online Appendix](https://github.com/worldbank/brazil-pip-education/blob/master/pip_app.pdf)
-
+## [Online Appendix](https://github.com/worldbank/brazil-pip-education/blob/working-paper/pip_app.pdf)
 
 
 ## Final Dataset Description
@@ -76,19 +75,19 @@ The `PIP-Master.do` file executes the following codes:
 		</font>
 	</summary>
 	<ol>
-		<li><code>fig1-grade_comparison.do</code> uses <code>RN_rates.dta</code> and plots Figure 1.</li>
-		<li><code>fig2-IDEB_byState.do</code> uses <code>Brazil_IDEB.dta</code> and plots Figure 2.</li>
-		<li><code>fig3-grant.do</code> uses <code>master_schoollevel.dta</code> and plots Figure 3.</li>
-		<li>Figure 4 is produced by the R-script <code>Map with treament distribution.R</code>. This code uses identified data (which is not part of the final datasets) and requires you to have a Google API key to retrieve the base map. <em>[NOTE: The figure produced by R was then manually cropped and the clarity of the image adapted.]</em>.</li>
-		<li><code>fig5-retention_grade6.do</code> uses <code>RN_students_panel.dta</code> and plots Figure 5 – Panels (a) and (b).</li>
-		<li><code>fig6-implementation_byGrade.do</code> uses <code>master_schoollevel.dta</code> and plots Figure 6.</li>
-		<li><code>figA1-predict_participation.do</code> uses <code>master_studentlevel.dta</code> and plots Figure A1.</li>
-		<li><code>figA2-qreg_media_grade6.do</code> uses <code>master_studentlevel.dta</code>, estimates and plots Figure A2.</li>
-		<li><code>figA3a-kdensity_grade6_byGender.do</code> uses <code>master_studentlevel.dta</code>, estimates and plots Figure A3 – Panel (a).</li>
-		<li><code>figA3b-qreg_media_grade6_byGender.do</code> uses <code>master_studentlevel.dta</code>, estimates and plots Figure A3 – Panel (b).</li>
-		<li><code>figA4-scatter_test_socio.do</code> uses <code>master_studentelevel.dta</code>, estimates and plots Figure A4 – Panels (a) and (b).</li>
-		<li><code>figA5-itt_ProvaBrasil.do</code> uses <code>Brazil_ProvaBrasil.dta</code> and <code>scores_rescaled_ProvaBrasil.dta</code>, estimates and plots Figures A5 – Panels (a) and (b).</li>
-		<li><code>figA6-itt_IDEB.do</code> uses <code>master_schoollevel.dta</code> and <code>Brazil_IDEB.dta</code>, estimates and plots Figure A6.</li>
+		<li><code>fig1-retention_grade6.do</code> uses <code>RN_students_panel.dta</code> and plots Figure 1 – Panels (a) and (b).</li>
+		<li><code>fig2-implementation_byGrade.do</code> uses <code>master_schoollevel.dta</code> and plots Figure 2.</li>
+		<li><code>figA1-IDEB_byState.do</code> uses <code>Brazil_IDEB.dta</code> and plots Figure A1.</li>
+		<li><code>figA2-grade_comparison.do</code> uses <code>RN_rates.dta</code> and plots Figure A2.</li>
+		<li><code>figA3-grant.do</code> uses <code>master_schoollevel.dta</code> and plots Figure A3.</li>
+		<li>Figure A4 is produced by the R-script <code>figA4-treat_map.R</code>. This code uses identified data on schools (which is not part of the final datasets) and requires you to have a Google API key to retrieve the base map. <em>[NOTE: The figure produced by R was then manually cropped and the clarity of the image adapted.]</em>.</li>
+		<li><code>figA5-predict_participation.do</code> uses <code>master_studentlevel.dta</code> and plots Figure A5.</li>
+		<li><code>figA6-qreg_media_grade6.do</code> uses <code>master_studentlevel.dta</code>, estimates and plots Figure A6.</li>
+		<li><code>figA7a-kdensity_grade6_byGender.do</code> uses <code>master_studentlevel.dta</code>, estimates and plots Figure A7 – Panel (a).</li>
+		<li><code>figA7b-qreg_media_grade6_byGender.do</code> uses <code>master_studentlevel.dta</code>, estimates and plots Figure A7 – Panel (b).</li>
+		<li><code>figA8-scatter_test_socio.do</code> uses <code>master_studentelevel.dta</code>, estimates and plots Figure A8 – Panels (a) and (b).</li>
+		<li><code>figA9-itt_ProvaBrasil.do</code> uses <code>Brazil_ProvaBrasil.dta</code> and <code>scores_rescaled_ProvaBrasil.dta</code>, estimates and plots Figures A9 – Panels (a) and (b).</li>
+		<li><code>figA10-itt_IDEB.do</code> uses <code>master_schoollevel.dta</code> and <code>Brazil_IDEB.dta</code>, estimates and plots Figure A10.</li>
 		<li><code>figB1-kdensity_wage.do</code> uses <code>RN_salaries_2016.dta</code> and estimates and plots Figure B1.</li>
 		<li><code>figC1-qreg_bySubject_grade6.do</code> uses <code>master_studentlevel.dta</code> estimates and plots Figure C1 – Panels (a), (b), (c), and (d).</li>
 	</ol>
@@ -103,7 +102,7 @@ The `PIP-Master.do` file executes the following codes:
 		</font>
 	</summary>
 	<ol>
-	<li><code>blockdim.ado</code> defines a command to estimate block difference-in-means regressions. This is then employed in <code>tabC2-test_studentlevel_DIM.do</code> and <code>tabC7-socio_studentlevel_DIM.do</code>.</li>
+	<li><code>blockdim.ado</code> defines a command to estimate block difference-in-means regressions. This is then employed in <code>tabC2-test_studentlevel_DIM.do</code> and <code>tabC10-socio_studentlevel_DIM.do</code>.</li>
 	</ol>
 </details>
 
@@ -138,13 +137,14 @@ The `PIP-Master.do` file executes the following codes:
 		<li><code>tabC3-test_studentlevel_IWE.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C3.</li>
 		<li><code>tabC4-test_studentlevel_RWE.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C4.</li>
 		<li><code>tabC5-test_schoollevel.do</code> uses <code>master_schoollevel.dta</code>, estimates and produces Table C5.</li>
-		<li><code>tabC6-test_rescaled_studentlevel.do</code> uses <code>scores_rescaled_ProvaBrasil.dta</code>, estimates and produces Table C12.</li>
-		<li><code>tabC7-promotion_other_grades.do</code> uses <code>rates_panel.dta</code>, <code>master_schoollevel.dta</code> and <code>RN_students_panel.dta</code>, estimates and produces Table C11.</li>
-		<li><code>tabC8-socio_studentlevel_ctrl.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C6.</li>
-		<li><code>tabC9-socio_studentlevel_DIM.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C7.</li>
-		<li><code>tabC10-socio_studentlevel_IWE.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C8.</li>
-		<li><code>tabC11-socio_studentlevel_RWE.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C9.</li>
-		<li><code>tabC12-socio_schoollevel.do</code> uses <code>master_schoollevel.dta</code>, estimates and produces Table C10.</li>
+		<li><code>tabC6-test_rescaled_studentlevel.do</code> uses <code>scores_rescaled_ProvaBrasil.dta</code>, estimates and produces Table C6.</li>
+		<li><code>tabC7-promotion_other_grades.do</code> uses <code>rates_panel.dta</code>, <code>master_schoollevel.dta</code> and <code>RN_students_panel.dta</code>, estimates and produces Table C7.</li>
+		<li><code>tabC8-het_spillover_other_grades.do</code> uses <code>master_teacherlevel.dta</code>, <code>RN_students_panel.dta</code> and <code>master_schoollevel.dta</code>, estimates and produces Table C8.</li>
+		<li><code>tabC9-socio_studentlevel_ctrl.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C9.</li>
+		<li><code>tabC10-socio_studentlevel_DIM.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C10.</li>
+		<li><code>tabC11-socio_studentlevel_IWE.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C11.</li>
+		<li><code>tabC12-socio_studentlevel_RWE.do</code> uses <code>master_studentlevel.dta</code>, estimates and produces Table C12.</li>
+		<li><code>tabC13-socio_schoollevel.do</code> uses <code>master_schoollevel.dta</code>, estimates and produces Table C13.</li>
 	</ol>
 </details>
 

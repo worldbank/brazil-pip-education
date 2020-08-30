@@ -17,8 +17,6 @@
 						
 	** CREATES:	   		Table C7: Impact on Student Progression Rates in 6th Grade Treated Schools - Spillover to Other Grades
 						"${master_tab}/tabC7-promotion_other_grades.tex"
-			
-	** NOTES:
 
 * ---------------------------------------------------------------------------- *
 *							School level regression				   			   *
@@ -184,7 +182,7 @@
 	erase 	   "${master_tab}/promotion_other_grades.tex"
 	
 	* Add link to the file (filefilter does not provide it automatically"
-	di as text `"Open final file in LaTeX here: {browse "${master_tab}/tabC11-promotion_other_grades.tex":"${master_tab}/tabC11-promotion_other_grades.tex"}"'
+	di as text `"Open final file in LaTeX here: {browse "${master_tab}/tabC7-promotion_other_grades.tex":"${master_tab}/tabC7-promotion_other_grades.tex"}"'
 
 	
 ******************************** End of do-file ********************************
