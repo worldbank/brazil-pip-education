@@ -30,6 +30,8 @@ Computational reproducibility was verified by [DIME Analytics](https://worldbank
 What is the impact of greater teacher autonomy on student learning? This paper provides experimental evidence from a program in Brazil. The program supported teachers, through a combination of technical assistance and a small grant, to autonomously develop and implement an innovative project aimed at engaging their students. The findings show that the program improved student learning by 0.15 standard deviation and grade passing by 13 percent in sixth grade, a critical year of transition from primary to lower-secondary education. The paper explores two mechanisms: teacher turnover and student socio-emotional skills. Teacher turnover is reduced by 20.7 percent, and the impacts on student outcomes are concentrated in the schools with the largest reductions. The findings also indicate positive impacts on conscientiousness and extroversion among the students. The results suggest that increasing the autonomy of public servants can improve service delivery, even in a low-capacity context.
 
 
+## [World Bank Policy Research Working Paper 9371](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/664331598882118514/supporting-teacher-autonomy-to-improve-education-outcomes-experimental-evidence-from-brazil)
+
 ## [Latest Version of the Paper](https://github.com/worldbank/brazil-pip-education/blob/master/pip.pdf)
 
 ## [Online Appendix](https://github.com/worldbank/brazil-pip-education/blob/master/pip_app.pdf)
