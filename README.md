@@ -10,7 +10,7 @@
 
 &nbsp;
 
-This repository contains the codes that replicate the figures and tables presented in the World Bank Policy Research Working Paper "Supporting Teacher Autonomy to Improve Education Outcomes: Experimental Evidence from Brazil" (2020) by Rafael Dantas, Andre Loureiro, Caio Piza, Matteo Ruzzante, and Astrid Zwager.
+This repository contains the codes that replicate the figures and tables presented in the World Bank Policy Research Working Paper "Supporting Teacher Autonomy to Improve Education Outcomes: Experimental Evidence from Brazil" (2020) by Rafael Dantas, Andre Loureiro, Caio Piza, Matteo Ruzzante, and Astrid Zwager. [[PDF]](https://github.com/worldbank/brazil-pip-education/blob/master/pip.pdf) [[BibTeX]](https://github.com/worldbank/brazil-pip-education/blob/master/pip_cite.bib)
 
 
 ## Read First
@@ -25,6 +25,7 @@ The project data have not been posted yet for proprietary reasons.
 
 Computational reproducibility was verified by [DIME Analytics](https://worldbank.github.io/dimeanalytics/code-review/). Details of the reproducibility checklist can be found in the online appendix of the paper.
 
+&nbsp;
 
 ## Abstract
 What is the impact of greater teacher autonomy on student learning? This paper provides experimental evidence from a program in Brazil. The program supported teachers, through a combination of technical assistance and a small grant, to autonomously develop and implement an innovative project aimed at engaging their students. The findings show that the program improved student learning by 0.15 standard deviation and grade passing by 13 percent in sixth grade, a critical year of transition from primary to lower-secondary education. The paper explores two mechanisms: teacher turnover and student socio-emotional skills. Teacher turnover is reduced by 20.7 percent, and the impacts on student outcomes are concentrated in the schools with the largest reductions. The findings also indicate positive impacts on conscientiousness and extroversion among the students. The results suggest that increasing the autonomy of public servants can improve service delivery, even in a low-capacity context.
@@ -150,5 +151,15 @@ The `PIP-Master.do` file executes the following codes:
 	</ol>
 </details>
 
-## Main Contact
-If you have any comment, suggestion or request for clarifications, you can contact Matteo Ruzzante at <a href="mailto:mruzzante@worldbank.org">mruzzante@worldbank.org</a> or directly open an issue or pull request in this GitHub repository.</p>
+
+## Divulgation
+- [Twitter thread (in Portuguese)](https://twitter.com/piza_caio/status/1301224806810091527)
+- [Some of Development Impact's favorite development papers of 2020](https://blogs.worldbank.org/impactevaluations/some-our-favorite-development-papers-2020)
+
+
+## Contact
+If you have any comment, suggestion or request for clarifications, you can contact Matteo Ruzzante at <a href="mailto:matteo.ruzzante@u.northwestern.edu">matteo.ruzzante@u.northwestern.edu</a> or directly open an issue or pull request in this GitHub repository.</p>
+
+&nbsp;
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
