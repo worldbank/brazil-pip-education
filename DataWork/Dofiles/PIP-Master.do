@@ -233,6 +233,9 @@
 			* Distribution and impact by gender
 			do "${master_do_anl}/figA3a-kdensity_grade6_byGender.do"
 			do "${master_do_anl}/figA3b-qreg_media_grade6_byGender.do"
+
+            * ?
+			do "${master_do_anl}/figA8-scatter_test_socio.do"
 			
 			* Effect in terms of Prova Brasil
 			do "${master_do_anl}/figA5-itt_ProvaBrasil.do"
@@ -299,6 +302,9 @@
 		* Spillover to other grades - full set of estimates
 		do "${master_do_anl}/tabC7-promotion_other_grades.do"
 		
+        * ?
+		do "${master_do_anl}/tabC8-het_spillover_other_grades.do"
+
 		* Regressions on rescaled test scores
 		do "${master_do_anl}/tabC6-test_rescaled_studentlevel.do"
 	}
