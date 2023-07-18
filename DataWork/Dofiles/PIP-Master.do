@@ -73,7 +73,7 @@
 		* Install package from Urbancic and Gibbons (2017) paper
 			* --------------------------------------------------
 			* Loads website
-			net from "http://www.jcsuarez.com/GSSU"
+			net from "https://www.jcsuarez.com/GSSU"
 			
 			* Describes package
 			net describe GSSU
