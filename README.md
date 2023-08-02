@@ -12,6 +12,8 @@
 
 This repository contains the codes that replicate the figures and tables presented in the World Bank Policy Research Working Paper "Supporting Teacher Autonomy to Improve Education Outcomes: Experimental Evidence from Brazil" (2020) by Rafael Dantas, Andre Loureiro, Caio Piza, Matteo Ruzzante, and Astrid Zwager. [[PDF]](https://github.com/worldbank/brazil-pip-education/blob/master/pip.pdf) [[BibTeX]](https://github.com/worldbank/brazil-pip-education/blob/master/pip_cite.bib)
 
+It is also featured in the World Bank's [Reproducible Research Repository](https://reproducibility.worldbank.org/index.php/home).
+
 
 ## Read First
 The whole analysis in the paper can be rerun by using the master script `PIP-Master.do`. It is only necessary to add your computer's username and path to the downloaded replication folder in line 131-133 of such do-file in *PART 1*.
